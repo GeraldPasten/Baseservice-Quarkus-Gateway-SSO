@@ -72,15 +72,15 @@ public class RestoRestGatewayService {
     public String redirigirSolicitudBasicAuthandTLS() throws NoSuchAlgorithmException, KeyStoreException, KeyManagementException {
     try {
         // Cargar el certificado
-            SSLContext sslContext = SSLContext.getInstance("TLS"); // Crea una nueva instancia utilizando el protocola TLS
+            /* SSLContext sslContext = SSLContext.getInstance("TLS"); // Crea una nueva instancia utilizando el protocola TLS
             TrustManagerFactory trustManagerFactory = TrustManagerFactory.getInstance(TrustManagerFactory.getDefaultAlgorithm()); //Crea una nueva instancia utilizando el algoritmo por defecto.
 
             trustManagerFactory.init(KeyStore.getInstance(KeyStore.getDefaultType())); // Inicializa trust manager factory cargando el tipo keystore
-            sslContext.init(null, trustManagerFactory.getTrustManagers(), null); // Inicializa el contexto SSL/TLS // los valores null indican que el contexto debe usar valores pode defecto
+            sslContext.init(null, trustManagerFactory.getTrustManagers(), null); // Inicializa el contexto SSL/TLS // los valores null indican que el contexto debe usar valores pode defecto */
 
         // Configurar el cliente JAX-RS con el certificado
-        Client client = ClientBuilder.newBuilder()  
-                    .sslContext(sslContext) // Configura el cliente para usar el sslContext que se creó anteriormente
+         Client client = ClientBuilder.newBuilder()  
+                    //.sslContext(sslContext)  Configura el cliente para usar el sslContext que se creó anteriormente
                     .build();
 
          // Crear la solicitud con los encabezados de autorización
