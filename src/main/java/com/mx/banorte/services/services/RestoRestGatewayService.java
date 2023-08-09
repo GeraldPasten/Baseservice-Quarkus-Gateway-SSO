@@ -1,11 +1,8 @@
 package com.mx.banorte.services.services;
 
 import java.security.KeyManagementException;
-// import java.security.KeyStore;
 import java.security.KeyStoreException;
 import java.security.NoSuchAlgorithmException;
-// import javax.net.ssl.SSLContext;
-// import javax.net.ssl.TrustManagerFactory;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
