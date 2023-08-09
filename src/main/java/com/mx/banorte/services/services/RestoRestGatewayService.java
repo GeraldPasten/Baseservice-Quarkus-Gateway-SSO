@@ -1,11 +1,11 @@
 package com.mx.banorte.services.services;
 
 import java.security.KeyManagementException;
-import java.security.KeyStore;
+// import java.security.KeyStore;
 import java.security.KeyStoreException;
 import java.security.NoSuchAlgorithmException;
-import javax.net.ssl.SSLContext;
-import javax.net.ssl.TrustManagerFactory;
+// import javax.net.ssl.SSLContext;
+// import javax.net.ssl.TrustManagerFactory;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
@@ -37,7 +37,7 @@ import org.eclipse.microprofile.config.inject.ConfigProperty;
  * La url del servicio que se va a consumir se especifica en la variable de entorno "servicioExterno",
  * que se utilizara al crear la solicitud mediante *builder = client.target(servicioExterno)*.
  * 
- * luego se recibe la respuesta de esta solicutud en variable respuesta en donde se define que sera response.readEntity(String.class);
+ * luego se recibe la respuesta de esta solicutud en variable respuesta en donde se define que sera response.readEntity(String.class)
  *  
  * 
  * Ese seria el funcionamiento basico de un gateway, pero si bien se sabe que no solo es consumir sin ningun requisito previo,
@@ -71,16 +71,9 @@ public class RestoRestGatewayService {
     @Produces(MediaType.APPLICATION_JSON)
     public String redirigirSolicitudBasicAuthandTLS() throws NoSuchAlgorithmException, KeyStoreException, KeyManagementException {
     try {
-        // Cargar el certificado
-            /* SSLContext sslContext = SSLContext.getInstance("TLS"); // Crea una nueva instancia utilizando el protocola TLS
-            TrustManagerFactory trustManagerFactory = TrustManagerFactory.getInstance(TrustManagerFactory.getDefaultAlgorithm()); //Crea una nueva instancia utilizando el algoritmo por defecto.
-
-            trustManagerFactory.init(KeyStore.getInstance(KeyStore.getDefaultType())); // Inicializa trust manager factory cargando el tipo keystore
-            sslContext.init(null, trustManagerFactory.getTrustManagers(), null); // Inicializa el contexto SSL/TLS // los valores null indican que el contexto debe usar valores pode defecto */
-
+        
         // Configurar el cliente JAX-RS con el certificado
          Client client = ClientBuilder.newBuilder()  
-                    //.sslContext(sslContext)  Configura el cliente para usar el sslContext que se creó anteriormente
                     .build();
 
          // Crear la solicitud con los encabezados de autorización
