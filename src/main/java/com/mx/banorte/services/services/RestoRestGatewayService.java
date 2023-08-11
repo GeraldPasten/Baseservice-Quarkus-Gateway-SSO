@@ -1,8 +1,5 @@
 package com.mx.banorte.services.services;
 
-import java.security.KeyManagementException;
-import java.security.KeyStoreException;
-import java.security.NoSuchAlgorithmException;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
@@ -66,7 +63,7 @@ public class RestoRestGatewayService {
     @GET // Define el tipo como de nuestro endpoint como GET.
     @Path("/rest") // extension de nuestra direccion.
     @Produces(MediaType.APPLICATION_JSON)
-    public String redirigirSolicitudBasicAuthandTLS() throws NoSuchAlgorithmException, KeyStoreException, KeyManagementException {
+    public String redirigirSolicitud()  {
     try {
         
         // Configurar el cliente JAX-RS con el certificado
