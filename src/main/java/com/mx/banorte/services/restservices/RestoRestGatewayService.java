@@ -62,7 +62,6 @@ public class RestoRestGatewayService {
     @POST // Este método ahora manejará solicitudes POST que pueden contener cuerpos JSON.    
     @Path("/redirect") // extension de nuestra direccion.
     @Produces(MediaType.APPLICATION_JSON) // Indicar que produciremos un cuerpo JSON en la solicitud
-    @Consumes(MediaType.APPLICATION_JSON) // Indicar que esperamos recibir un cuerpo JSON en la solicitud
     public Response restToRestCall(String requestBody) throws Exception {
 
         // Crear una instancia de Jsonb para deserializar el JSON en un objeto
