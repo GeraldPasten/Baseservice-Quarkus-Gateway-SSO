@@ -79,7 +79,7 @@ public class RestoRestGatewayService {
             Client client = ClientBuilder.newBuilder().build();
 
             // Crear la solicitud con los encabezados de autorización
-            Invocation.Builder builder = client.target(servicio) // Establece el objetivo de la solicitud, es decir, la URL del servicio externo al que deseas realizar la invocación. 
+            Invocation.Builder builder = client.target("https://svr-01-bussines-bd-sso-arquetypes.apps.cluster-kpdf9.kpdf9.sandbox3011.opentlc.com/perfil/perfiles") // Establece el objetivo de la solicitud, es decir, la URL del servicio externo al que deseas realizar la invocación. 
                                     
                     .request(MediaType.APPLICATION_JSON) // Establece el tipo de contenido que se espera en la respuesta del servicio externo, en este caso JSON                                    
                     .header("Authorization", "Basic " + "tokenUtenticacionBasica"); // Agrega un encabezado de autorización a la solicitud "tokenUtenticacionBasica" debe ser la credencial.
